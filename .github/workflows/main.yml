@@ -9,4 +9,4 @@ jobs:
         with:
           compose-file: "./docker/docker-compose-tests.yml"
           test-container: test_runner
-          test-command: ls
+          test-command: echo "la"
