@@ -4,3 +4,4 @@ version: "3.8"
 services:
   test_runner:
     image: python:3.10-buster
+    command: ["sleep", "infinity"]
