@@ -2,5 +2,5 @@ version: "3.8"
 
 
 services:
-  nginx:
+  test_runner:
     image: nginx

@@ -1,20 +1,12 @@
-on:
-  workflow_dispatch:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
+on: [workflow_dispatch, push]
 
 jobs:
   test-compose-action:
     runs-on: ubuntu-latest
-    name: test compose action
     steps:
       - uses: actions/checkout@v3
       - uses: adambirds/docker-compose-action@v1.3.0
         with:
           compose-file: "./docker/docker-compose-tests.yml"
-          test-container: nginx
+          test-container: test_runner
           test-command: ls
