@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 19.4.0
-      - uses: ./
+      - uses: adambirds/docker-compose-action@v1.3.0
         with:
           compose-file: "./docker/docker-compose-tests.yml"
           test-container: nginx
