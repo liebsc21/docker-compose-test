@@ -1,0 +1,17 @@
+name: asset_download
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  download_frontend_assets:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Download asset from release
+        uses: dsaltares/fetch-gh-release-asset@1.1.1
+        with:
+          repo: 'dsaltares/godot-wild-jam-18'
+          version: 'tags/v0.1.18'
+          file: 'plague-linux.zip'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: ls
+        run: ls
